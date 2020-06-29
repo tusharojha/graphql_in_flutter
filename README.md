@@ -13,3 +13,6 @@ Add the following details to `main.dart` file:
 
 For help getting started with Flutter & GraphQL, checkout the 
 [webinar](), on my YouTube Channel.
+
+## Screenshot
+![Product Catalog App](/screenshots/1.jpeg)
