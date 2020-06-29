@@ -13,13 +13,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  // Declaring Auth Variables
   AuthLink authLink;
   HttpLink httpLink;
+  // Declaring GraphQLClient for connection
   ValueNotifier<GraphQLClient> client;
 
   @override
   void initState() {
     super.initState();
+    // Setting up network with GraphQL Server
     authLink = AuthLink(
         getToken: () async =>
             'Bearer <ADD YOUR JWT TOKEN HERE>');
@@ -31,6 +35,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // GraphQLProvider provides access to client instance down the widget tree
     return GraphQLProvider(
       client: client,
       child: CacheProvider(

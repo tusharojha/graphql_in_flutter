@@ -12,6 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // GraphQL query to be fetched
   String getCategories = """
   query {
     Category{
@@ -28,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
+        // Running the Query in this widget
         child: Query(
           options: QueryOptions(
             documentNode: gql(getCategories),
@@ -35,20 +37,26 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (QueryResult result,
               {VoidCallback refetch, FetchMore fetchMore}) {
             if (result.hasException) {
+              // error connecting to server
               print(result.exception.toString());
               return Text("Error Connecting to server!");
             }
 
             if (result.loading) {
+              // getting data from the server
               return CircularProgressIndicator();
             }
+            // Casting the Categories into CategoryList Object present in Category.dart
             CategoryList cl =
                 CategoryList.fromResponse(result.data['Category']);
+            // Displaying the ListView on successful response
             return ListView.builder(
                 itemCount: cl.categories.length,
                 itemBuilder: (context, index) {
+                  // Category Object contains the name & url of category
                   final category = cl.categories[index];
 
+                  // Showing custom item ui for a particular category
                   return CategoryItem(category: category);
                 });
           },
