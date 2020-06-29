@@ -1,16 +1,15 @@
-# flutter_catalog
+# Flutter with GraphQL
 
-A new Flutter application.
+A simple Flutter App which fetches data from GraphQL server.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Run `pub get` after cloning the repo to get the dependencies.
 
-A few resources to get you started if this is your first Flutter project:
+Add the following details to `main.dart` file:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- JWT Token
+- GraphQL Endpoint
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For help getting started with Flutter & GraphQL, checkout the 
+[webinar](), on my YouTube Channel.
